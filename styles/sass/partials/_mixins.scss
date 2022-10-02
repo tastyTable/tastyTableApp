@@ -1,0 +1,10 @@
+@use "variables" as *;
+
+// Mixin for flexBox
+@mixin flex ($direction, $wrap: nowrap, $mainAxis: normal, $crossAxis: normal) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+    justify-content: $mainAxis;
+    align-items: $crossAxis;
+}

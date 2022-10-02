@@ -1,0 +1,21 @@
+@use "variables" as *;
+
+// Extra Stripping Styles:
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+// Base Styles:
+body {
+    overflow-x: hidden;
+    background-color: $primaryColour;
+}
+
+.wrapper {
+    max-width: 1260px;
+    width: 90%;
+    margin: 0 auto;
+}

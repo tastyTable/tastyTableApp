@@ -1,0 +1,99 @@
+@use "variables" as *;
+
+@font-face {
+    font-family: "Nickainley";
+    src: url('../fonts/Nickainley-Normal.otf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url('../fonts/montserrat/Montserrat-Medium.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url('../fonts/montserrat/Montserrat-Regular.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Josefin-Sans";
+    src: url('../fonts/josefin-sans/JosefinSans-Regular.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Josefin-Sans";
+    src: url('../fonts/josefin-sans/JosefinSans-Light.ttf');
+    font-weight: lighter;
+}
+
+html {
+    /* 20px font size */
+    font-size: 125%;
+    color: $fontColour;
+}
+
+body {
+    font-family: $mainFont;
+
+    h1 {
+        font-size: clamp(4rem, 12vw, 5rem);
+        line-height: clamp(3.8rem, 12vw, 4.8rem);
+    }
+
+    h2 {
+        font-family: $accentFont;
+        font-size: 2rem;
+        line-height: 2.6rem;
+    }
+
+    h3 {
+        font-size: 2.1rem;
+        text-align: center;
+    }
+
+    h4 {
+        font-size: 1.6rem;
+        line-height: 1.45rem;
+    }
+
+    h5 {
+        font-size: 1.25rem;
+        line-height: 1.25rem;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
+
+    a {
+        font-family: $accentFont;
+        font-size: 1rem;
+        text-align: center;
+        line-height: 1.45rem;
+    }
+
+    .buttonFind,
+    .buttonRead {
+        font-size: 1rem;
+        text-align: center;
+        line-height: 1.6rem;
+    }
+
+    input,
+    textarea {
+        font-family: $accentFont;
+        font-size: 0.9rem;
+        color: $fontColour;
+    }
+
+    button {
+        font-family: $headingFont;
+        font-size: 1.1rem;
+        color: $fontColour;
+    }
+}
