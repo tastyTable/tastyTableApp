@@ -1,0 +1,39 @@
+@use "variables" as *;
+
+// Extra Stripping Styles:
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+// Base Styles:
+body {
+    overflow-x: hidden;
+    background-color: $primaryColour;
+}
+
+.wrapper {
+    max-width: 1560px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.sr-only:not(:focus):not(:active) {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+    /* added line */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
