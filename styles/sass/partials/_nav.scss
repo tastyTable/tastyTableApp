@@ -2,9 +2,7 @@
 
 /* Nav styles */
 nav ul {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    @include flex (row, nowrap, flex-end, center);
     padding-left: 0;
 }
 
