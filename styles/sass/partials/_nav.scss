@@ -1,0 +1,20 @@
+@use "variables" as *;
+
+/* Nav styles */
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 0;
+}
+
+nav li {
+    font-family: "Josefin Sans";
+    padding-left: 30px;
+    list-style: none;
+}
+
+nav li:first-child {
+    margin-right: auto;
+    padding-left: 0px;
+}

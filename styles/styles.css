@@ -262,7 +262,8 @@ html {
 
 @font-face {
   font-family: "Nickainley";
-  src: url("../fonts/Nickainley-Normal.otf");
+  src: url("../fonts/Nickainley/TTF/Nickainley.ttf");
+  src: url("../fonts/Nickainley/OTF/Nickainley.otf");
   font-weight: normal;
 }
 @font-face {
@@ -277,7 +278,7 @@ html {
 }
 @font-face {
   font-family: "Josefin-Sans";
-  src: url("../fonts/josefin-sans/JosefinSans-Regular.ttf");
+  src: url("../fonts/Josefin_Sans/static/JosefinSans-Regular.ttf");
   font-weight: normal;
 }
 @font-face {
@@ -286,37 +287,45 @@ html {
   font-weight: lighter;
 }
 html {
-  /* 20px font size */
+  font-family: "Montserrat";
+  /* 20px default font size */
   font-size: 125%;
   color: #2A2C41;
 }
 
-body {
-  font-family: "Montserrat";
+.logo {
+  font-family: "Nickainley";
+  font-size: 2rem;
+  color: #FF724C;
 }
-body h1 {
+
+h1 {
   font-size: clamp(4rem, 12vw, 5rem);
   line-height: clamp(3.8rem, 12vw, 4.8rem);
   font-weight: bold;
 }
-body h2 {
+
+h2 {
   font-family: "Josefin-Sans";
   font-size: 2rem;
   line-height: 2.6rem;
 }
-body h3 {
+
+h3 {
   font-size: 2.1rem;
   text-align: center;
 }
-body p {
+
+p {
   font-size: 1rem;
   line-height: 1.6rem;
 }
-body a {
+
+a {
   font-family: "Josefin-Sans";
   font-size: 1rem;
-  text-align: center;
   line-height: 1.45rem;
+  text-align: center;
 }
 
 * {
@@ -332,7 +341,50 @@ body {
 }
 
 .wrapper {
-  max-width: 1260px;
+  max-width: 1560px;
   width: 90%;
   margin: 0 auto;
+}
+
+.sr-only:not(:focus):not(:active) {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  /* added line */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Nav styles */
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 0;
+}
+
+nav li {
+  font-family: "Josefin Sans";
+  padding-left: 30px;
+  list-style: none;
+}
+
+nav li:first-child {
+  margin-right: auto;
+  padding-left: 0px;
 }

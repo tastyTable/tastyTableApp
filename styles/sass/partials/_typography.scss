@@ -2,7 +2,8 @@
 
 @font-face {
     font-family: "Nickainley";
-    src: url('../fonts/Nickainley-Normal.otf');
+    src: url("../fonts/Nickainley/TTF/Nickainley.ttf");
+    src: url("../fonts/Nickainley/OTF/Nickainley.otf");
     font-weight: normal;
 }
 
@@ -14,13 +15,13 @@
 
 @font-face {
     font-family: "Montserrat";
-    src: url('../fonts/montserrat/Montserrat-Regular.ttf');
+    src: url("../fonts/montserrat/Montserrat-Regular.ttf");
     font-weight: normal;
 }
 
 @font-face {
     font-family: "Josefin-Sans";
-    src: url('../fonts/josefin-sans/JosefinSans-Regular.ttf');
+    src: url("../fonts/Josefin_Sans/static/JosefinSans-Regular.ttf");
     font-weight: normal;
 }
 
@@ -31,40 +32,43 @@
 }
 
 html {
-    /* 20px font size */
+    font-family: $mainFont;
+    /* 20px default font size */
     font-size: 125%;
     color: $fontColour;
 }
 
-body {
-    font-family: $mainFont;
+.logo {
+    font-family: $logoFont;
+    font-size: 2rem;
+    color: $secondaryColour;
+}
 
-    h1 {
-        font-size: clamp(4rem, 12vw, 5rem);
-        line-height: clamp(3.8rem, 12vw, 4.8rem);
-        font-weight: bold;
-    }
+h1 {
+    font-size: clamp(4rem, 12vw, 5rem);
+    line-height: clamp(3.8rem, 12vw, 4.8rem);
+    font-weight: bold;
+}
 
-    h2 {
-        font-family: $accentFont;
-        font-size: 2rem;
-        line-height: 2.6rem;
-    }
+h2 {
+    font-family: $accentFont;
+    font-size: 2rem;
+    line-height: 2.6rem;
+}
 
-    h3 {
-        font-size: 2.1rem;
-        text-align: center;
-    }
+h3 {
+    font-size: 2.1rem;
+    text-align: center;
+}
 
-    p {
-        font-size: 1rem;
-        line-height: 1.6rem;
-    }
+p {
+    font-size: 1rem;
+    line-height: 1.6rem;
+}
 
-    a {
-        font-family: $accentFont;
-        font-size: 1rem;
-        text-align: center;
-        line-height: 1.45rem;
-    }
+a {
+    font-family: $accentFont;
+    font-size: 1rem;
+    line-height: 1.45rem;
+    text-align: center;
 }
