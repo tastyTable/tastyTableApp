@@ -4,10 +4,147 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f21b5dfadd.js" crossorigin="anonymous"></script>
     <title>Tasty Table | Home</title>
+    <style>
+        /* Typography */
+        @font-face {
+            font-family: "Nickainley";
+            src: url("./fonts/Nickainley/TTF/Nickainley.ttf");
+            font-weight: normal;
+        }
+
+        @font-face {
+            font-family: "Josefin Sans";
+            src: url("./fonts/Josefin_Sans/static/JosefinSans-Regular.ttf");
+            font-weight: normal;
+        }
+
+        @font-face {
+            font-family: "Montserrat";
+            src: url("./fonts/montserrat/Montserrat-Regular.ttf");
+            font-weight: normal;
+        }
+        html{
+            font-size: 125%; /* 20px default */
+        }
+
+        body{
+            color: #2A2C41;
+            font-family: "Montserrat";
+        }
+        
+        .logo{
+            font-family: "Nickainley";
+            color: #FF724C;
+            font-size: 2rem;
+            
+        }
+        h1 {
+            font-family: "Montserrat";
+        }
+
+        h2 {
+            font-family: "Josefin Sans";
+        }
+
+        a {
+            font-family: "Josefin Sans";
+            text-decoration: none;
+            color: #2A2C41;
+        }
+
+    /* Base styles */
+
+        .wrapper{
+            max-width: 1560px;
+            width: 90%;
+            margin: 0 auto;
+        }
+            
+        .sr-only:not(:focus):not(:active) { 
+            position: absolute;
+            height: 1px; 
+            width: 1px;
+            overflow: hidden;
+            clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+            clip: rect(1px, 1px, 1px, 1px);
+            white-space: nowrap; /* added line */
+        }
+
+        img{
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+    /* Nav styles */
+    nav ul {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-left: 0;
+        } 
+
+        nav li {
+            font-family: "Josefin Sans";
+            padding-left: 30px;
+            list-style: none;
+        }
+
+        nav li:first-child{
+            margin-right: auto;
+            padding-left: 0px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Tasty Table</h1>
+    <header>
+        <div class="wrapper">
+            <nav>
+                <ul>
+                    <li class="logo">Tasty Table</li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about" title="About Tasty Table">About</a></li>
+                    <li><a href="#main" title="Go to our Recipes">Recipes</a></li>
+                </ul>
+            </nav>
+
+            <h1>Welcome to Your Kitchen</h1>
+            <h2>Helping you craft the perfect meal</h2>
+            <a href="#main" title="Go to main section">Start Cooking</a>
+        </div>
+    </header>
+    <main>
+        <section class="wrapper" id="main">
+            <form action="#" method="#" class="searchBar" name="searchBar">
+                <label for="search" class="sr-only">Search ingredient or dish</label>
+                <textarea name="userSearch" id="search" cols="30" rows="1" minlength="3" maxlength="200" placeholder="Search ingredient or dish"></textarea>
+                <button type="submit">Find me the perfect meal!</button>
+            </form><!--Form ends-->
+            <div class="recipe">
+                <h3>Recipe Title</h3>
+                <div class="flexContainer">
+                    <div class="imgContainer">
+                        <img src="http://placekitten.com/200/200" alt="The image of the recipe">
+                    </div>
+                    <div class="textContainer">
+                        <div class="iconFlexContainer">
+                            <div class="icon">
+                                <i class="fa-regular fa-clock"></i>
+                                <p>Prep Time: 3min</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa-solid fa-fire-burner"></i>
+                                <p>Cook Time: 0min</p>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas sapiente nam magnam iusto quibusdam reprehenderit consequuntur, commodi nulla ex dolor blanditiis omnis excepturi dolorem ipsa quasi repellat laborum aperiam aut?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     <script src="./script.js"></script>
 </body>
 </html>
