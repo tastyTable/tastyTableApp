@@ -2,20 +2,20 @@
 @use "mixins" as *;
 
 main {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    &::before {
-        content: "";
-        background-image: url("../assets/brooke-lark-jUPOXXRNdcA-unsplash.jpg");
-        background-size: cover;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        opacity: 0.25;
-    }
+    // position: relative;
+    // height: 100vh;
+    // width: 100%;
+    // &::before {
+    //     content: "";
+    //     background-image: url("../assets/brooke-lark-jUPOXXRNdcA-unsplash.jpg");
+    //     background-size: cover;
+    //     position: absolute;
+    //     top: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     left: 0;
+    //     opacity: 0.25;
+    // }
 }
 
 .main{

@@ -1,18 +1,40 @@
 @use "variables" as *;
 @use "mixins" as *;
+
 /* Nav styles */
+nav {
+position: fixed;
+width: 90%;
+}
+
 nav ul {
+    @include flex (row, nowrap, space-between, center);
+    padding: 20px 0;
+}
+
+nav ul ul {
     @include flex (row, nowrap, flex-end, center);
-    padding-left: 0;
+    width: 50%;
 }
 
-nav li {
+nav ul ul li {
     font-family: "Josefin Sans";
-    padding-left: 30px;
-    list-style: none;
+    margin-left: 50px
 }
 
-nav li:first-child {
-    margin-right: auto;
-    padding-left: 0px;
+.navButton {
+    margin-top: 1.5rem;
+    color: $primaryColour;
+    background-color: $secondaryColour;
+    border-radius: 25px;
+    padding: 10px 13px 8px 13px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover,
+    &:focus {
+        color: $secondaryColour;
+        background-color: $primaryColour;
+    }
 }
