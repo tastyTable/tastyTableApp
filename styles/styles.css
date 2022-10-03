@@ -283,6 +283,11 @@ html {
 }
 @font-face {
   font-family: "Josefin-Sans";
+  src: url("../fonts/josefin-sans/JosefinSans-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Josefin-Sans";
   src: url("../fonts/josefin-sans/JosefinSans-Light.ttf");
   font-weight: lighter;
 }
@@ -319,12 +324,20 @@ h3 {
 p {
   font-size: 1rem;
   line-height: 1.6rem;
+  letter-spacing: 1px;
 }
 
 a {
   font-family: "Josefin-Sans";
   font-size: 1rem;
   line-height: 1.45rem;
+  text-align: center;
+}
+
+button, .button {
+  font-family: "Josefin-Sans";
+  font-weight: 600;
+  font-size: 1.2rem;
   text-align: center;
 }
 
@@ -364,11 +377,33 @@ img {
   display: block;
 }
 
+button, .button {
+  margin-top: 1.5rem;
+  color: #F4F4F8;
+  background-color: #FF724C;
+  border-radius: 25px;
+  padding: 15px 15px 10px 15px;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+button:hover, button:focus, .button:hover, .button:focus {
+  color: #FF724C;
+  background-color: #F4F4F8;
+}
+
 /* Nav styles */
 nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -387,4 +422,118 @@ nav li {
 nav li:first-child {
   margin-right: auto;
   padding-left: 0px;
+}
+
+main {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+main::before {
+  content: "";
+  background-image: url("../assets/brooke-lark-jUPOXXRNdcA-unsplash.jpg");
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.25;
+}
+
+.main {
+  position: relative;
+}
+
+.searchBar {
+  padding: 2rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.recipe {
+  background-color: #F4F4F8;
+  border-radius: 25px;
+  padding: 20px;
+}
+.recipe .flexContainer {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
+  gap: 3rem;
+}
+.recipe .flexContainer .imgContainer {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.recipe .flexContainer .imgContainer img {
+  border-radius: 25px;
+}
+.recipe .flexContainer .textContainer .iconFlexContainer {
+  margin: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
+  gap: 5rem;
+}
+
+.icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+.icon i {
+  font-size: 2rem;
+  color: #FF724C;
 }

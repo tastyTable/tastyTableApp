@@ -1,5 +1,5 @@
 @use "variables" as *;
-
+@use "mixins" as *;
 /* Nav styles */
 nav ul {
     @include flex (row, nowrap, flex-end, center);

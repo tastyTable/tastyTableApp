@@ -37,3 +37,18 @@ img {
     height: auto;
     display: block;
 }
+
+button, .button{
+    margin-top: 1.5rem;
+    color: $primaryColour;
+    background-color: $secondaryColour;
+    border-radius: 25px;
+    padding: 15px 15px 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover, &:focus{
+        color: $secondaryColour;
+        background-color: $primaryColour;
+    }
+}
