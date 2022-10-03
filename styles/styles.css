@@ -334,7 +334,7 @@ a {
   text-align: center;
 }
 
-button, .button {
+textarea, button, .button {
   font-family: "Josefin-Sans";
   font-weight: 600;
   font-size: 1.2rem;
@@ -428,6 +428,21 @@ main {
   position: relative;
   height: 100vh;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 main::before {
   content: "";
@@ -446,7 +461,7 @@ main::before {
 }
 
 .searchBar {
-  padding: 2rem 0;
+  padding-bottom: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -462,6 +477,12 @@ main::before {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+.searchBar textarea {
+  border-radius: 2rem;
+  border: 4px solid #FF724C;
+  padding: 0.75rem;
+  resize: none;
 }
 
 .recipe {
@@ -536,4 +557,12 @@ main::before {
 .icon i {
   font-size: 2rem;
   color: #FF724C;
+}
+
+footer {
+  background-color: #F4F4F8;
+}
+footer p {
+  text-align: center;
+  padding: 0.3rem;
 }
