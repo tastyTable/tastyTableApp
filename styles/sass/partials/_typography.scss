@@ -27,6 +27,12 @@
 
 @font-face {
     font-family: "Josefin-Sans";
+    src: url("../fonts/josefin-sans/JosefinSans-SemiBold.ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Josefin-Sans";
     src: url("../fonts/josefin-sans/JosefinSans-Light.ttf");
     font-weight: lighter;
 }
@@ -64,11 +70,19 @@ h3 {
 p {
     font-size: 1rem;
     line-height: 1.6rem;
+    letter-spacing: 1px;
 }
 
 a {
     font-family: $accentFont;
     font-size: 1rem;
     line-height: 1.45rem;
+    text-align: center;
+}
+
+button, .button{
+    font-family: $accentFont;
+    font-weight: 600;
+    font-size: 1.2rem;
     text-align: center;
 }
