@@ -492,25 +492,7 @@ header .hero {
   position: fixed;
   height: 100vh;
   width: 100%;
-<<<<<<< HEAD
   z-index: -1;
-=======
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
->>>>>>> ea9c977dc1130d312551e2ec8a209d9767f4b36e
 }
 header .hero::before {
   content: "";
