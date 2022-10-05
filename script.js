@@ -33,15 +33,14 @@ app.getAutoComplete = function(ingredient){
 }
 
 app.displayDropDown = function(arrayofResults){
+    const dataList = document.querySelector('#searchList');
     arrayofResults.forEach((result)=>{
         const searchValue = result.search_value;
-
-        const dataList = document.querySelector('#searchList');
-
-        dataList.innerHTML = `<option value="${searchValue}">`;
- 
-        console.log(searchValue)
-    })
+        const option = document.createElement('option')
+        option.setAttribute("value", searchValue)
+        dataList.append(option)
+        // console.log(dataList)
+    });
 
 }
 
