@@ -578,9 +578,17 @@ header .flexContainer {
 .recipe .flexContainer .imgContainer {
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  height: 400px;
+  width: 400px;
 }
 .recipe .flexContainer .imgContainer img {
   border-radius: 25px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 100%;
+  height: 100%;
 }
 .recipe .flexContainer .textContainer .iconFlexContainer {
   margin: 1rem 0;
