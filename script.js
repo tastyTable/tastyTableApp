@@ -39,6 +39,7 @@ app.displayDropDown = function(arrayofResults){
         const searchValue = result.search_value;
         const option = document.createElement('option')
         option.setAttribute("value", searchValue)
+        // add if/else function to not append if the option value is equal to whats already there 
         app.dataList.append(option)
         // console.log(dataList)
     });
@@ -49,11 +50,9 @@ app.events = function () {
     app.inputElement.addEventListener('keydown',function(event){
         app.dataList.innerHTML = '';
         const userSearch = event.target.value;
-        if (!userSearch) {
-            console.log("search is empty")
-        } else {
+        if (userSearch) {
             app.getAutoComplete(userSearch);
-        }
+        } 
     })
 }
 

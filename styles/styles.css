@@ -261,7 +261,7 @@ html {
 }
 
 .visually-hidden:not(:focus):not(:active) {
-  position: absolute;
+  position: absolute !important;
   height: 1px;
   width: 1px;
   overflow: hidden;
