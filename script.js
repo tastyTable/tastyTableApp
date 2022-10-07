@@ -8,6 +8,7 @@ const app = {};
 app.apiKey = 'c03cc9a000msha3fe9d73a2d9dfdp16bddfjsn7cf0888a090e';
 app.inputElement = document.querySelector('#search');
 app.dataList = document.querySelector('#searchList');
+app.form = document.querySelector('form');
 
 app.getAutoComplete = function(ingredient){
     const url = new URL('https://tasty.p.rapidapi.com/recipes/auto-complete')
@@ -47,12 +48,19 @@ app.displayDropDown = function(arrayofResults){
 }
 
 app.events = function () {
-    app.inputElement.addEventListener('keydown',function(event){
+    app.inputElement.addEventListener('keydown',function(eventInput){
         app.dataList.innerHTML = '';
-        const userSearch = event.target.value;
+        const userSearch = eventInput.target.value;
         if (userSearch) {
             app.getAutoComplete(userSearch);
         } 
+    })
+
+    app.form.addEventListener('submit', function(eventButton){
+        eventButton.preventDefault();
+        const userSelection = app.inputElement.value;
+        console.log(userSelection)
+        app.getRecipes(userSelection)
     })
 }
 
@@ -117,9 +125,10 @@ app.displayRecipe = function(recipe){
     main.appendChild(recipeContainer)
 }
 
+
+
 app.init = function () {
     app.events()
-    app.getRecipes('chicken')
 };
 
 app.init();
