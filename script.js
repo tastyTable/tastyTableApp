@@ -2,10 +2,12 @@
 
 // API Key (Charlotte): c03cc9a000msha3fe9d73a2d9dfdp16bddfjsn7cf0888a090e
 // API Key (Anjalee): 3d98be6ce0mshbad421f97ff1ba1p1f94acjsnc1505c33d623
+// API Key (Charlotte2): 180120784fmsh53e5419d8e55e13p1e8b89jsn0210d2e0e838
+// API Key (Anjalee2): 6aab796937msh786ae70d84925b3p16c2dbjsn00d2aa969bd7
 
 const app = {};
 
-app.apiKey = 'c03cc9a000msha3fe9d73a2d9dfdp16bddfjsn7cf0888a090e';
+app.apiKey = '180120784fmsh53e5419d8e55e13p1e8b89jsn0210d2e0e838';
 app.inputElement = document.querySelector('#search');
 app.dataList = document.querySelector('#searchList');
 app.form = document.querySelector('form');
@@ -40,7 +42,6 @@ app.displayDropDown = function(arrayofResults){
         const searchValue = result.search_value;
         const option = document.createElement('option')
         option.setAttribute("value", searchValue)
-        // add if/else function to not append if the option value is equal to whats already there 
         if (app.dataList.childElementCount = 0){
             app.dataList.append(option)
         } else{
