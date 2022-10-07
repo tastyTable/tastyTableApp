@@ -525,6 +525,8 @@ header .flexContainer {
 
 .main {
   position: relative;
+  height: 75vh;
+  padding-top: 4rem;
 }
 
 .searchBar {
@@ -634,6 +636,7 @@ header .flexContainer {
 }
 
 footer {
+  margin-top: 2rem;
   background-color: #F4F4F8;
 }
 footer p {

@@ -41,15 +41,20 @@ app.displayDropDown = function(arrayofResults){
         const option = document.createElement('option')
         option.setAttribute("value", searchValue)
         // add if/else function to not append if the option value is equal to whats already there 
-        app.dataList.append(option)
-        // console.log(dataList)
+        if (app.dataList.childElementCount = 0){
+            app.dataList.append(option)
+        } else{
+            while(app.dataList.firstChild){
+                app.dataList.removeChild(app.dataList.firstChild);
+            }
+            app.dataList.append(option)
+        }
     });
 
 }
 
 app.events = function () {
     app.inputElement.addEventListener('keydown',function(eventInput){
-        app.dataList.innerHTML = '';
         const userSearch = eventInput.target.value;
         if (userSearch) {
             app.getAutoComplete(userSearch);
@@ -68,7 +73,7 @@ app.getRecipes = function(recipe){
     const url = new URL('https://tasty.p.rapidapi.com/recipes/list')
     url.search = new URLSearchParams ({
         from: 0,
-        size: 1,
+        size: 100,
         q: recipe
     });
 
@@ -90,15 +95,16 @@ app.getRecipes = function(recipe){
 }
 
 app.displayRecipe = function(recipe){
-    const name = recipe[0].name
-    const description = recipe[0].description
-    const imageSrc = recipe[0].thumbnail_url
-    const imageAlt = recipe[0].name
-    const cookTime = recipe[0].cook_time_minutes
-    const prepTime = recipe[0].prep_time_minutes
-
-    console.log(name, description)
+    const indexRandom = Math.floor(Math.random() * recipe.length);
+    const name = recipe[indexRandom].name
+    const description = recipe[indexRandom].description
+    const imageSrc = recipe[indexRandom].thumbnail_url
+    const imageAlt = recipe[indexRandom].name
+    const cookTime = recipe[indexRandom].cook_time_minutes
+    const prepTime = recipe[indexRandom].prep_time_minutes
+    const recipeSlug= recipe[indexRandom].slug
     const recipeContainer = document.createElement('div')
+    console.log("test",recipe[indexRandom])
     recipeContainer.classList.add("recipe")
     recipeContainer.innerHTML = `
     <h3>${name}</h3>
@@ -117,12 +123,18 @@ app.displayRecipe = function(recipe){
                     <p>Cooking Time: ${cookTime} mins</p>
                 </div>
             </div>
-            <p>${description}</p>
+            <p>${description} <a href="https://tasty.co/recipe/${recipeSlug}">See full recipe here</a></p>
         </div>
     </div>
     `
     const main = document.querySelector('#main')
-    main.appendChild(recipeContainer)
+
+        if (main.childElementCount === 1){
+        main.appendChild(recipeContainer);
+    } else{
+        main.removeChild(main.lastElementChild);
+        main.appendChild(recipeContainer);
+    }
 }
 
 
