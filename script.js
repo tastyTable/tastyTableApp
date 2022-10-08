@@ -116,45 +116,89 @@ app.getRecipes = function(recipe){
 
 app.displayRecipe = function(recipe){
     const indexRandom = Math.floor(Math.random() * recipe.length);
-    const name = recipe[indexRandom].name
-    const description = recipe[indexRandom].description
-    const imageSrc = recipe[indexRandom].thumbnail_url
-    const imageAlt = recipe[indexRandom].name
-    const cookTime = recipe[indexRandom].cook_time_minutes
-    const prepTime = recipe[indexRandom].prep_time_minutes
-    const recipeSlug= recipe[indexRandom].slug
-    const recipeContainer = document.createElement('div')
-    console.log("test",recipe[indexRandom])
-    recipeContainer.classList.add("recipe")
-    recipeContainer.innerHTML = `
-    <h3>${name}</h3>
-    <div class="flexContainer">
-        <div class="imgContainer">
-            <img src=${imageSrc} alt=${imageAlt}>
-        </div>
-        <div class="textContainer">
-            <div class="iconFlexContainer">
-                <div class="icon">
-                    <i class="fa-regular fa-clock"></i>
-                    <p>Prep Time: ${prepTime} mins</p>
-                </div>
-                <div class="icon">
-                    <i class="fa-solid fa-fire-burner"></i>
-                    <p>Cooking Time: ${cookTime} mins</p>
-                </div>
+    if (recipe[indexRandom].recipes){
+        const indexRandom2 = Math.floor(Math.random() * recipe[indexRandom].recipes.length);
+        const name = recipe[indexRandom].recipes[indexRandom2].name
+        const description = recipe[indexRandom].recipes[indexRandom2].description
+        const imageSrc = recipe[indexRandom].recipes[indexRandom2].thumbnail_url
+        const imageAlt = recipe[indexRandom].recipes[indexRandom2].name
+        const cookTime = recipe[indexRandom].recipes[indexRandom2].cook_time_minutes
+        const prepTime = recipe[indexRandom].recipes[indexRandom2].prep_time_minutes
+        const recipeSlug= recipe[indexRandom].recipes[indexRandom2].slug
+        const recipeContainer = document.createElement('div')
+        console.log("test",recipe[indexRandom].recipes[indexRandom2])
+        recipeContainer.classList.add("recipe")
+        recipeContainer.innerHTML = `
+        <h3>${name}</h3>
+        <div class="flexContainer">
+            <div class="imgContainer">
+                <img src=${imageSrc} alt=${imageAlt}>
             </div>
-            <p>${description} <a href="https://tasty.co/recipe/${recipeSlug}">See full recipe here</a></p>
+            <div class="textContainer">
+                <div class="iconFlexContainer">
+                    <div class="icon">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>Prep Time: ${prepTime} mins</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-solid fa-fire-burner"></i>
+                        <p>Cooking Time: ${cookTime} mins</p>
+                    </div>
+                </div>
+                <p>${description} <a href="https://tasty.co/recipe/${recipeSlug}">See full recipe here</a></p>
+            </div>
         </div>
-    </div>
-    `
-    const main = document.querySelector('#main')
-
-        if (main.childElementCount === 1){
-        main.appendChild(recipeContainer);
-    } else{
-        main.removeChild(main.lastElementChild);
-        main.appendChild(recipeContainer);
+        `
+        const main = document.querySelector('#main')
+    
+            if (main.childElementCount === 1){
+            main.appendChild(recipeContainer);
+        } else{
+            main.removeChild(main.lastElementChild);
+            main.appendChild(recipeContainer);
+        }
+    } else {
+        const name = recipe[indexRandom].name
+        const description = recipe[indexRandom].description
+        const imageSrc = recipe[indexRandom].thumbnail_url
+        const imageAlt = recipe[indexRandom].name
+        const cookTime = recipe[indexRandom].cook_time_minutes
+        const prepTime = recipe[indexRandom].prep_time_minutes
+        const recipeSlug= recipe[indexRandom].slug
+        const recipeContainer = document.createElement('div')
+        console.log("test",recipe[indexRandom])
+        recipeContainer.classList.add("recipe")
+        recipeContainer.innerHTML = `
+        <h3>${name}</h3>
+        <div class="flexContainer">
+            <div class="imgContainer">
+                <img src=${imageSrc} alt=${imageAlt}>
+            </div>
+            <div class="textContainer">
+                <div class="iconFlexContainer">
+                    <div class="icon">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>Prep Time: ${prepTime} mins</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-solid fa-fire-burner"></i>
+                        <p>Cooking Time: ${cookTime} mins</p>
+                    </div>
+                </div>
+                <p>${description} <a href="https://tasty.co/recipe/${recipeSlug}">See full recipe here</a></p>
+            </div>
+        </div>
+        `
+        const main = document.querySelector('#main')
+    
+            if (main.childElementCount === 1){
+            main.appendChild(recipeContainer);
+        } else{
+            main.removeChild(main.lastElementChild);
+            main.appendChild(recipeContainer);
+        }
     }
+
 }
 
 
