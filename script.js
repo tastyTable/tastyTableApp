@@ -27,14 +27,23 @@ app.getAutoComplete = function(ingredient){
     };
     
     fetch(url, options)
-        .then(response => response.json())
+        .then((response) => {
+        console.log(response);
+        if(response.ok){
+            return response.json();
+        }else{
+            throw new Error(response.statusText)
+        }
+    })
         .then(jsonData => {
             // console.log(jsonData) //check to see the name of the array to use in the app.displayDropdown method i.e. 'results'
             app.displayDropDown(jsonData.results);
             console.log(jsonData.results)
         })
-        // .catch(err => console.error(err));
-
+        .catch((err) => {
+            console.error(err)
+            alert("Something is broken, try again later...")
+        })
 }
 
 app.displayDropDown = function(arrayofResults){
@@ -87,12 +96,22 @@ app.getRecipes = function(recipe){
     };
     
     fetch(url, options)
-        .then(response => response.json())
-        .then(jsonData => {
-            // console.log(jsonData) //check to see the name of the array to use in the app.displayDropdown method i.e. 'results'
-            console.log(jsonData.results)
-            app.displayRecipe(jsonData.results)
+        .then((response) => {
+            console.log(response);
+            if(response.ok){
+                return response.json();
+            }else{
+                throw new Error(response.statusText)
+            }
         })
+            .then(jsonData => {
+                app.displayRecipe(jsonData.results)
+                console.log(jsonData.results)
+            })
+            .catch((err) => {
+                console.error(err)
+                alert("Something is broken, try again later...")
+            })
 }
 
 app.displayRecipe = function(recipe){
