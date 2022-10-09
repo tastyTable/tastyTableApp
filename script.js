@@ -116,7 +116,7 @@ app.getRecipes = function(recipe){
 
 app.displayRecipe = function(recipe){
     const indexRandom = Math.floor(Math.random() * recipe.length);
-    let indexRandom2 ;
+    let indexRandom2;
     let name;
     let description;
     let imageSrc;
@@ -143,38 +143,49 @@ app.displayRecipe = function(recipe){
         prepTime = recipe[indexRandom].prep_time_minutes
         recipeSlug= recipe[indexRandom].slug
     }
-        recipeContainer = document.createElement('div')
-        console.log("test",recipe[indexRandom])
-        recipeContainer.classList.add("recipe")
-        recipeContainer.innerHTML = `
-        <h3>${name}</h3>
-        <div class="flexContainer">
-            <div class="imgContainer">
-                <img src=${imageSrc} alt=${imageAlt}>
-            </div>
-            <div class="textContainer">
-                <div class="iconFlexContainer">
-                    <div class="icon">
-                        <i class="fa-regular fa-clock"></i>
-                        <p>Prep Time: ${prepTime} mins</p>
-                    </div>
-                    <div class="icon">
-                        <i class="fa-solid fa-fire-burner"></i>
-                        <p>Cooking Time: ${cookTime} mins</p>
-                    </div>
-                </div>
-                <p>${description} <a href="https://tasty.co/recipe/${recipeSlug}">See full recipe here</a></p>
-            </div>
+    if (cookTime === null) {
+        cookTime = "N/A";
+    }
+    if (prepTime === null) {
+        prepTime = "N/A";
+    }
+    if (description === null) {
+        description = "";
+    }
+    console.log(cookTime);
+    console.log(prepTime);
+    recipeContainer = document.createElement('div')
+    console.log("test",recipe[indexRandom])
+    recipeContainer.classList.add("recipe")
+    recipeContainer.innerHTML = `
+    <h3>${name}</h3>
+    <div class="flexContainer">
+        <div class="imgContainer">
+            <img src=${imageSrc} alt=${imageAlt}>
         </div>
-        `
-        const main = document.querySelector('#main')
-    
-            if (main.childElementCount === 1){
-            main.appendChild(recipeContainer);
-        } else{
-            main.removeChild(main.lastElementChild);
-            main.appendChild(recipeContainer);
-        }
+        <div class="textContainer">
+            <div class="iconFlexContainer">
+                <div class="icon">
+                    <i class="fa-regular fa-clock"></i>
+                    <p>Prep Time: ${prepTime} mins</p>
+                </div>
+                <div class="icon">
+                    <i class="fa-solid fa-fire-burner"></i>
+                    <p>Cooking Time: ${cookTime} mins</p>
+                </div>
+            </div>
+            <p>${description} <a href="https://tasty.co/recipe/${recipeSlug}">See full recipe here</a></p>
+        </div>
+    </div>
+    `
+    const main = document.querySelector('#main')
+
+        if (main.childElementCount === 1){
+        main.appendChild(recipeContainer);
+    } else{
+        main.removeChild(main.lastElementChild);
+        main.appendChild(recipeContainer);
+    }
 }
 
 
