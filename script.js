@@ -112,6 +112,19 @@ app.getRecipes = function(recipe){
                 console.log(recipeLowerCase);
                 if (result.name.toLowerCase().includes(recipeLowerCase)) {
                     listOfRecipes.push(result);
+                    // console.log(listOfRecipes);
+                } else if (result.sections) {
+                    // console.log(result.sections)
+                    result.sections.forEach((section)=>{
+                        section.components.forEach((component)=>{
+                            // console.log('ingredient in list', component.ingredient.name)
+                            if (component.ingredient.name === recipeLowerCase) { 
+                                // console.log('match')
+                                listOfRecipes.push(result); 
+                                // console.log(listOfRecipes);
+                            }
+                        })
+                    })
                 }
             })
             console.log(listOfRecipes);
