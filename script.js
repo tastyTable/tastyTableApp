@@ -104,14 +104,23 @@ app.getRecipes = function(recipe){
                 throw new Error(response.statusText)
             }
         })
-            .then(jsonData => {
-                app.displayRecipe(jsonData.results)
-                console.log(jsonData.results)
+        .then(jsonData => {
+            console.log(jsonData.results);
+            const listOfRecipes = [];
+            jsonData.results.forEach(function (result) {
+                recipeLowerCase = recipe.toLowerCase();
+                console.log(recipeLowerCase);
+                if (result.name.toLowerCase().includes(recipeLowerCase)) {
+                    listOfRecipes.push(result);
+                }
             })
-            .catch((err) => {
-                console.error(err)
-                alert("Something is broken, try again later...")
-            })
+            console.log(listOfRecipes);
+            app.displayRecipe(listOfRecipes);
+        })
+        .catch((err) => {
+            console.error(err)
+            alert("That is not an ingredient we have, try another one")
+        })
 }
 
 app.displayRecipe = function(recipe){
