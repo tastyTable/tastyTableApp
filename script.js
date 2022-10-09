@@ -115,7 +115,7 @@ app.getRecipes = function(recipe){
 }
 
 app.displayRecipe = function(recipe){
-    const indexRandom = Math.floor(Math.random() * recipe.length);
+    let indexRandom = Math.floor(Math.random() * recipe.length);
     let indexRandom2;
     let name;
     let description;
@@ -125,15 +125,21 @@ app.displayRecipe = function(recipe){
     let prepTime;
     let recipeSlug;
     let recipeContainer;
-    if (recipe[indexRandom].recipes){
-        indexRandom2 = Math.floor(Math.random() * recipe[indexRandom].recipes.length);
-        name = recipe[indexRandom].recipes[indexRandom2].name
-        description = recipe[indexRandom].recipes[indexRandom2].description
-        imageSrc = recipe[indexRandom].recipes[indexRandom2].thumbnail_url
-        imageAlt = recipe[indexRandom].recipes[indexRandom2].name
-        cookTime = recipe[indexRandom].recipes[indexRandom2].cook_time_minutes
-        prepTime = recipe[indexRandom].recipes[indexRandom2].prep_time_minutes
-        recipeSlug= recipe[indexRandom].recipes[indexRandom2].slug
+    console.log("first random number", indexRandom)
+    if (recipe[indexRandom].recipes) {
+        do {
+            indexRandom = Math.floor(Math.random() * recipe.length);
+            console.log("This is our new index random number", indexRandom);
+        } while (recipe[indexRandom].recipes);
+        
+        console.log("second random number", indexRandom)
+        name = recipe[indexRandom].name
+        description = recipe[indexRandom].description
+        imageSrc = recipe[indexRandom].thumbnail_url
+        imageAlt = recipe[indexRandom].name
+        cookTime = recipe[indexRandom].cook_time_minutes
+        prepTime = recipe[indexRandom].prep_time_minutes
+        recipeSlug = recipe[indexRandom].slug
     } else {
         name = recipe[indexRandom].name
         description = recipe[indexRandom].description
@@ -143,6 +149,26 @@ app.displayRecipe = function(recipe){
         prepTime = recipe[indexRandom].prep_time_minutes
         recipeSlug= recipe[indexRandom].slug
     }
+
+    // OLD CODE:
+    // if (recipe[indexRandom].recipes){
+    //     indexRandom2 = Math.floor(Math.random() * recipe[indexRandom].recipes.length);
+    //     name = recipe[indexRandom].recipes[indexRandom2].name
+    //     description = recipe[indexRandom].recipes[indexRandom2].description
+    //     imageSrc = recipe[indexRandom].recipes[indexRandom2].thumbnail_url
+    //     imageAlt = recipe[indexRandom].recipes[indexRandom2].name
+    //     cookTime = recipe[indexRandom].recipes[indexRandom2].cook_time_minutes
+    //     prepTime = recipe[indexRandom].recipes[indexRandom2].prep_time_minutes
+    //     recipeSlug= recipe[indexRandom].recipes[indexRandom2].slug
+    // } else {
+    //     name = recipe[indexRandom].name
+    //     description = recipe[indexRandom].description
+    //     imageSrc = recipe[indexRandom].thumbnail_url
+    //     imageAlt = recipe[indexRandom].name
+    //     cookTime = recipe[indexRandom].cook_time_minutes
+    //     prepTime = recipe[indexRandom].prep_time_minutes
+    //     recipeSlug= recipe[indexRandom].slug
+    // }
     if (cookTime === null) {
         cookTime = "N/A";
     }
@@ -156,7 +182,7 @@ app.displayRecipe = function(recipe){
     console.log(prepTime);
     recipeContainer = document.createElement('div')
     console.log("test",recipe[indexRandom])
-    console.log("test recipe mashup", recipe[indexRandom].recipes[indexRandom2])
+    //console.log("test recipe mashup", recipe[indexRandom].recipes[indexRandom2])
     recipeContainer.classList.add("recipe")
     recipeContainer.innerHTML = `
     <h3>${name}</h3>
