@@ -273,55 +273,55 @@ html {
 }
 
 @font-face {
-  font-family: "Nickainley";
-  src: url("../fonts/nickainley/Nickainley.ttf");
-  src: url("../fonts/nickainley/Nickainley.otf");
+  font-family: "nickainley";
+  src: url("../fonts/nickainley/nickainley.ttf");
+  src: url("../fonts/nickainley/nickainley.otf");
   font-weight: normal;
 }
 @font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/montserrat/Montserrat-Regular.ttf");
+  font-family: "montserrat";
+  src: url("../fonts/montserrat/montserratRegular.ttf");
   font-weight: 400;
 }
 @font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/montserrat/Montserrat-Medium.ttf");
+  font-family: "montserrat";
+  src: url("../fonts/montserrat/montserratMedium.ttf");
   font-weight: 500;
 }
 @font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/montserrat/Montserrat-SemiBold.ttf");
+  font-family: "montserrat";
+  src: url("../fonts/montserrat/montserratSemiBold.ttf");
   font-weight: 600;
 }
 @font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/montserrat/Montserrat-Bold.ttf");
+  font-family: "montserrat";
+  src: url("../fonts/montserrat/montserratBold.ttf");
   font-weight: 700;
 }
 @font-face {
-  font-family: "Josefin-Sans";
-  src: url("../fonts/josefin-sans/JosefinSans-Regular.ttf");
+  font-family: "josefinSans";
+  src: url("../fonts/josefinSans/josefinSansRegular.ttf");
   font-weight: normal;
 }
 @font-face {
-  font-family: "Josefin-Sans";
-  src: url("../fonts/josefin-sans/JosefinSans-SemiBold.ttf");
+  font-family: "josefinSans";
+  src: url("../fonts/josefinSans/josefinSansSemiBold.ttf");
   font-weight: 600;
 }
 @font-face {
-  font-family: "Josefin-Sans";
-  src: url("../fonts/josefin-sans/JosefinSans-Light.ttf");
+  font-family: "josefinSans";
+  src: url("../fonts/josefinSans/josefinSansLight.ttf");
   font-weight: lighter;
 }
 html {
-  font-family: "Montserrat";
+  font-family: "montserrat";
   /* 20px default font size */
   font-size: 125%;
   color: #2A2C41;
 }
 
 .logo {
-  font-family: "Nickainley";
+  font-family: "nickainley";
   font-size: 2rem;
   color: #FF724C;
 }
@@ -338,7 +338,7 @@ h1 span {
 }
 
 h2 {
-  font-family: "Josefin-Sans";
+  font-family: "josefinSans";
   font-size: clamp(1.4rem, 4vw, 2rem);
   line-height: clamp(1.6rem, 4vw, 2.6rem);
   text-align: center;
@@ -357,7 +357,7 @@ p {
 }
 
 .navButton {
-  font-family: "Josefin-Sans";
+  font-family: "josefinSans";
   font-size: 0.9rem;
   font-weight: 600;
   line-height: 1.45rem;
@@ -365,7 +365,7 @@ p {
 }
 
 textarea, input, button, .button {
-  font-family: "Josefin-Sans";
+  font-family: "josefinSans";
   font-weight: 600;
   font-size: 1.2rem;
   text-align: center;
@@ -496,7 +496,7 @@ header .hero {
 }
 header .hero::before {
   content: "";
-  background-image: url("../assets/brooke-lark-jUPOXXRNdcA-unsplash.jpg");
+  background-image: url("../assets/brookeLarkUnsplash.jpg");
   background-size: cover;
   position: absolute;
   top: 0;
