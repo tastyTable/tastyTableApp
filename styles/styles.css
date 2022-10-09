@@ -327,8 +327,8 @@ html {
 }
 
 h1 {
-  font-size: clamp(4rem, 12vw, 5rem);
-  line-height: clamp(4rem, 12vw, 5rem);
+  font-size: clamp(2rem, 9vw, 5rem);
+  line-height: clamp(2.2rem, 9vw, 5rem);
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
@@ -339,8 +339,8 @@ h1 span {
 
 h2 {
   font-family: "Josefin-Sans";
-  font-size: 2rem;
-  line-height: 2.6rem;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  line-height: clamp(1.6rem, 4vw, 2.6rem);
   text-align: center;
   letter-spacing: 6px;
 }
@@ -351,8 +351,8 @@ h3 {
 }
 
 p {
-  font-size: 1rem;
-  line-height: 1.6rem;
+  font-size: clamp(0.8rem, 3vw, 1rem);
+  line-height: clamp(1.1rem, 3vw, 1.6rem);
   letter-spacing: 1px;
 }
 
@@ -525,7 +525,6 @@ header .flexContainer {
 
 .main {
   position: relative;
-  height: 75vh;
   padding-top: 4rem;
 }
 
@@ -557,6 +556,7 @@ header .flexContainer {
   background-color: #F4F4F8;
   border-radius: 25px;
   padding: 20px;
+  margin-bottom: -150px;
 }
 .recipe .flexContainer {
   padding: 1rem;
@@ -636,10 +636,63 @@ header .flexContainer {
 }
 
 footer {
-  margin-top: 2rem;
+  margin-top: 200px;
   background-color: #F4F4F8;
 }
 footer p {
   text-align: center;
   padding: 0.3rem;
+}
+
+@media (max-width: 1200px) {
+  .recipe .flexContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 1rem;
+  }
+  .recipe .flexContainer .textContainer {
+    padding: 0 10%;
+  }
+  .recipe .flexContainer .textContainer .iconFlexContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  h1 {
+    padding: 0 15px;
+  }
+  h2 {
+    padding: 16px 60px;
+    letter-spacing: 2px;
+  }
+}
+@media (max-width: 520px) {
+  .recipe .flexContainer .imgContainer {
+    height: 300px;
+    width: 300px;
+  }
 }

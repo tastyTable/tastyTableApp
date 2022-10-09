@@ -63,8 +63,8 @@ html {
 }
 
 h1 {
-    font-size: clamp(4rem, 12vw, 5rem);
-    line-height: clamp(4rem, 12vw, 5rem);
+    font-size: clamp(2rem, 9vw, 5rem);
+    line-height: clamp(2.2rem, 9vw, 5rem);
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
@@ -75,8 +75,8 @@ h1 {
 
 h2 {
     font-family: $accentFont;
-    font-size: 2rem;
-    line-height: 2.6rem;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    line-height: clamp(1.6rem, 4vw, 2.6rem);
     text-align: center;
     letter-spacing: 6px;
 }
@@ -87,8 +87,8 @@ h3 {
 }
 
 p{
-    font-size: 1rem;
-    line-height: 1.6rem;
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    line-height: clamp(1.1rem, 3vw, 1.6rem);
     letter-spacing: 1px;
 }
 

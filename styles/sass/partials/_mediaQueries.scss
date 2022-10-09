@@ -1,0 +1,45 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+// Media Queries:
+
+@media (max-width: 1200px) {
+    .recipe {
+        .flexContainer {
+            @include flex (column, nowrap, center, center);
+            gap: 1rem;
+            .textContainer {
+                padding: 0 10%;
+                .iconFlexContainer {
+                    @include flex (row, nowrap, space-around, center)
+                }
+                // p {
+                //     text-align: center;
+                // }
+            }
+        }
+    }
+    h1 {
+        padding: 0 15px;
+    }
+    h2 {
+        padding: 16px 60px;
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 520px) {
+    .recipe {
+        .flexContainer {
+            .imgContainer {
+                height: 300px;
+                width: 300px;
+            }
+            // .textContainer {
+            //     p {
+            //         font-size: 0.5rem;
+            //     }
+            // }
+        }
+    }
+}

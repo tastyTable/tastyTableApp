@@ -156,6 +156,7 @@ app.displayRecipe = function(recipe){
     console.log(prepTime);
     recipeContainer = document.createElement('div')
     console.log("test",recipe[indexRandom])
+    console.log("test recipe mashup", recipe[indexRandom].recipes[indexRandom2])
     recipeContainer.classList.add("recipe")
     recipeContainer.innerHTML = `
     <h3>${name}</h3>
