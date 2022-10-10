@@ -5,8 +5,10 @@
 // API Key (Charlotte2): 180120784fmsh53e5419d8e55e13p1e8b89jsn0210d2e0e838
 // API Key (Anjalee2): 6aab796937msh786ae70d84925b3p16c2dbjsn00d2aa969bd7
 
+// namespace object
 const app = {};
 
+// namespace variables
 app.apiKey = '180120784fmsh53e5419d8e55e13p1e8b89jsn0210d2e0e838';
 app.inputElement = document.querySelector('#search');
 app.dataList = document.querySelector('#searchList');
@@ -15,6 +17,23 @@ app.menuIcon = document.querySelector('.navIcon');
 app.closeIcon = document.querySelector('.buttonContainer');
 app.slideOut = document.getElementById('slideOutNavElement');
 
+// create event listener for the search bar and for the form submit
+app.events = function () {
+    app.inputElement.addEventListener('keydown', function (eventInput) {
+        const userSearch = eventInput.target.value;
+        if (userSearch) {
+            app.getAutoComplete(userSearch);
+        }
+    })
+
+    app.form.addEventListener('submit', function (eventButton) {
+        eventButton.preventDefault();
+        const userSelection = app.inputElement.value;
+        app.getRecipes(userSelection);
+    })
+}
+
+// method to fetch data from Tasty API auto-complete endpoint (using user's input)
 app.getAutoComplete = function(ingredient){
     const url = new URL('https://tasty.p.rapidapi.com/recipes/auto-complete')
     url.search = new URLSearchParams ({
@@ -31,24 +50,21 @@ app.getAutoComplete = function(ingredient){
     
     fetch(url, options)
         .then((response) => {
-        console.log(response);
         if(response.ok){
             return response.json();
         }else{
-            throw new Error(response.statusText)
+            throw new Error(response.statusText);
         }
     })
         .then(jsonData => {
-            // console.log(jsonData) //check to see the name of the array to use in the app.displayDropdown method i.e. 'results'
             app.displayDropDown(jsonData.results);
-            console.log(jsonData.results)
         })
         .catch((err) => {
-            console.error(err)
-            alert("Something is broken, try again later...")
+            alert("Something is broken, try again later...");
         })
 }
 
+// method to display search value to the search bar's dropdown
 app.displayDropDown = function(arrayofResults){
     arrayofResults.forEach((result)=>{
         const searchValue = result.search_value;
@@ -63,25 +79,9 @@ app.displayDropDown = function(arrayofResults){
             app.dataList.append(option)
         }
     });
-
 }
 
-app.events = function () {
-    app.inputElement.addEventListener('keydown',function(eventInput){
-        const userSearch = eventInput.target.value;
-        if (userSearch) {
-            app.getAutoComplete(userSearch);
-        } 
-    })
-
-    app.form.addEventListener('submit', function(eventButton){
-        eventButton.preventDefault();
-        const userSelection = app.inputElement.value;
-        console.log(userSelection)
-        app.getRecipes(userSelection)
-    })
-}
-
+// method to fetch recipe data from Tasty API recipe/list endpoint
 app.getRecipes = function(recipe){
     const url = new URL('https://tasty.p.rapidapi.com/recipes/list')
     url.search = new URLSearchParams ({
@@ -100,7 +100,6 @@ app.getRecipes = function(recipe){
     
     fetch(url, options)
         .then((response) => {
-            console.log(response);
             if(response.ok){
                 return response.json();
             }else{
@@ -108,92 +107,44 @@ app.getRecipes = function(recipe){
             }
         })
         .then(jsonData => {
-            console.log(jsonData.results);
             const listOfRecipes = [];
             jsonData.results.forEach(function (result) {
                 recipeLowerCase = recipe.toLowerCase();
-                console.log(recipeLowerCase);
                 if (result.name.toLowerCase().includes(recipeLowerCase)) {
                     listOfRecipes.push(result);
-                    // console.log(listOfRecipes);
                 } else if (result.sections) {
-                    // console.log(result.sections)
                     result.sections.forEach((section)=>{
                         section.components.forEach((component)=>{
-                            // console.log('ingredient in list', component.ingredient.name)
                             if (component.ingredient.name === recipeLowerCase) { 
-                                // console.log('match')
                                 listOfRecipes.push(result); 
-                                // console.log(listOfRecipes);
                             }
                         })
                     })
                 }
             })
-            console.log(listOfRecipes);
             app.displayRecipe(listOfRecipes);
         })
         .catch((err) => {
-            console.error(err)
             alert("That is not an ingredient we have, try another one")
         })
 }
 
+// method to generate random number and display recipe to the page
 app.displayRecipe = function(recipe){
     let indexRandom = Math.floor(Math.random() * recipe.length);
-    let indexRandom2;
-    let name;
-    let description;
-    let imageSrc;
-    let imageAlt;
-    let cookTime;
-    let prepTime;
-    let recipeSlug;
-    let recipeContainer;
-    console.log("first random number", indexRandom)
     if (recipe[indexRandom].recipes) {
         do {
             indexRandom = Math.floor(Math.random() * recipe.length);
-            console.log("This is our new index random number", indexRandom);
         } while (recipe[indexRandom].recipes);
-        
-        console.log("second random number", indexRandom)
-        name = recipe[indexRandom].name
-        description = recipe[indexRandom].description
-        imageSrc = recipe[indexRandom].thumbnail_url
-        imageAlt = recipe[indexRandom].name
-        cookTime = recipe[indexRandom].cook_time_minutes
-        prepTime = recipe[indexRandom].prep_time_minutes
-        recipeSlug = recipe[indexRandom].slug
-    } else {
-        name = recipe[indexRandom].name
-        description = recipe[indexRandom].description
-        imageSrc = recipe[indexRandom].thumbnail_url
-        imageAlt = recipe[indexRandom].name
-        cookTime = recipe[indexRandom].cook_time_minutes
-        prepTime = recipe[indexRandom].prep_time_minutes
-        recipeSlug= recipe[indexRandom].slug
     }
+    let name = recipe[indexRandom].name
+    let description = recipe[indexRandom].description
+    let imageSrc = recipe[indexRandom].thumbnail_url
+    let imageAlt = recipe[indexRandom].name
+    let cookTime = recipe[indexRandom].cook_time_minutes
+    let prepTime = recipe[indexRandom].prep_time_minutes
+    let recipeSlug = recipe[indexRandom].slug
 
-    // OLD CODE:
-    // if (recipe[indexRandom].recipes){
-    //     indexRandom2 = Math.floor(Math.random() * recipe[indexRandom].recipes.length);
-    //     name = recipe[indexRandom].recipes[indexRandom2].name
-    //     description = recipe[indexRandom].recipes[indexRandom2].description
-    //     imageSrc = recipe[indexRandom].recipes[indexRandom2].thumbnail_url
-    //     imageAlt = recipe[indexRandom].recipes[indexRandom2].name
-    //     cookTime = recipe[indexRandom].recipes[indexRandom2].cook_time_minutes
-    //     prepTime = recipe[indexRandom].recipes[indexRandom2].prep_time_minutes
-    //     recipeSlug= recipe[indexRandom].recipes[indexRandom2].slug
-    // } else {
-    //     name = recipe[indexRandom].name
-    //     description = recipe[indexRandom].description
-    //     imageSrc = recipe[indexRandom].thumbnail_url
-    //     imageAlt = recipe[indexRandom].name
-    //     cookTime = recipe[indexRandom].cook_time_minutes
-    //     prepTime = recipe[indexRandom].prep_time_minutes
-    //     recipeSlug= recipe[indexRandom].slug
-    // }
     if (cookTime === null) {
         cookTime = "N/A";
     }
@@ -203,12 +154,9 @@ app.displayRecipe = function(recipe){
     if (description === null) {
         description = "";
     }
-    console.log(cookTime);
-    console.log(prepTime);
-    recipeContainer = document.createElement('div')
-    console.log("test",recipe[indexRandom])
-    //console.log("test recipe mashup", recipe[indexRandom].recipes[indexRandom2])
-    recipeContainer.classList.add("recipe")
+    
+    let recipeContainer = document.createElement('div');
+    recipeContainer.classList.add("recipe");
     recipeContainer.innerHTML = `
     <h3>${name}</h3>
     <div class="flexContainer">
@@ -230,9 +178,9 @@ app.displayRecipe = function(recipe){
         </div>
     </div>
     `
-    const main = document.querySelector('#main')
+    const main = document.querySelector('#main');
 
-        if (main.childElementCount === 1){
+    if (main.childElementCount === 1){
         main.appendChild(recipeContainer);
     } else{
         main.removeChild(main.lastElementChild);
@@ -256,10 +204,12 @@ app.hideClass = () => {
     });
 }
 
+// initiation method
 app.init = function () {
     app.events();
     app.showClass();
     app.hideClass();
 };
 
+// calling the initiation method
 app.init();
