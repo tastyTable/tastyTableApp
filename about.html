@@ -13,7 +13,11 @@
         <div class="hero"></div>
         <div class="wrapper">
             <nav>
-                <ul>
+                <button class="navIcon fa-solid fa-bars">
+                    <p class="sr-only">click here to open slide-out menu</p>
+                </button>
+                <!--.navIcon ends-->
+                <ul class="navBar">
                     <li class="logo">Tasty Table</li>
                     <ul>
                         <li><a href="./index.html" class="navButton">Home</a></li>
@@ -23,6 +27,19 @@
                 </ul>
             </nav>
         </div>
+        <!-- Markup for Slide Out Nav -->
+        <div class="slideOutNav hide" id="slideOutNavElement">
+            <div class="buttonContainer">
+                <button><i class="fa-solid fa-xmark"></i></button>
+            </div> <!-- .buttonContainer ends -->
+            <nav>
+                <ul>
+                    <li><a href="./index.html" class="navButton">Home</a></li>
+                    <li><a href="./about.html" title="About Tasty Table" class="navButton">About</a></li>
+                    <li><a href="index.html#main" title="Go to Our Recipes" class="navButton">Recipes</a></li>
+                </ul>
+            </nav>
+        </div> <!-- .slideOutNav ends -->
     </header>
     <main>
         <section class="wrapper aboutSection" id="about">
@@ -43,6 +60,6 @@
     <footer>
         <p>Copyright © 2022 Juno College</p>
     </footer>
-    <script src="./script.js"></script>
+    <script src="./scriptAbout.js"></script>
 </body>
 </html>
