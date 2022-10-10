@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
+    <!-- Header HTML -->
     <header>
         <div class="hero"></div>
         <div class="wrapper">
             <nav>
                 <button class="navIcon fa-solid fa-bars">
                     <p class="sr-only">click here to open slide-out menu</p>
-                </button>
-                <!--.navIcon ends-->
+                </button> <!--.navIcon ends-->
                 <ul class="navBar">
                     <li class="logo">Tasty Table</li>
                     <ul>
@@ -24,9 +24,10 @@
                         <li><a href="./about.html" title="About Tasty Table" class="navButton">About</a></li>
                         <li><a href="index.html#main" title="Go to Our Recipes" class="navButton">Recipes</a></li>
                     </ul>
-                </ul>
+                </ul> <!-- .navBar ends -->
             </nav>
-        </div>
+        </div> <!-- .wrapper ends -->
+
         <!-- Markup for Slide Out Nav -->
         <div class="slideOutNav hide" id="slideOutNavElement">
             <div class="buttonContainer">
@@ -39,8 +40,11 @@
                     <li><a href="index.html#main" title="Go to Our Recipes" class="navButton">Recipes</a></li>
                 </ul>
             </nav>
-        </div> <!-- .slideOutNav ends -->
+        </div> <!-- .slideOutNav .hide ends -->
     </header>
+    <!-- Header HTML ends -->
+    
+    <!-- Main HTML -->
     <main>
         <section class="wrapper aboutSection" id="about">
             <h2>About</h2>
@@ -54,12 +58,18 @@
                     <li>Step 3: Click on the description link to access the recipe</li>
                     <li>Step 4: Start Cooking!</li>
                 </ul>
-            </div>
-        </section>
+            </div> <!-- .about ends -->
+        </section> <!-- .wrapper .aboutSection ends -->
     </main>
+    <!-- Main HTML ends -->
+    
+    <!-- Footer HTML -->
     <footer>
-        <p>Copyright © 2022 Juno College</p>
+        <p>Copyright © 2022 <a href="https://junocollege.com/">Juno College</a></p>
     </footer>
+    <!-- Footer HTML ends -->
+    
+    <!-- Linked JS file -->
     <script src="./scriptAbout.js"></script>
 </body>
 </html>

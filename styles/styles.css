@@ -432,12 +432,10 @@ button:hover, button:focus, .button:hover, .button:focus {
   background-color: #F4F4F8;
 }
 
-/* Nav styles */
 nav {
   position: fixed;
   width: 90%;
 }
-
 nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -456,7 +454,6 @@ nav ul {
           align-items: center;
   padding: 20px 0;
 }
-
 nav ul ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -475,7 +472,6 @@ nav ul ul {
           align-items: center;
   width: 50%;
 }
-
 nav ul ul li {
   font-family: "Josefin Sans";
   margin-left: 50px;
@@ -766,7 +762,11 @@ footer p {
   text-align: center;
   padding: 0.3rem;
 }
+footer p a {
+  color: #FF724C;
+}
 
+/* all of our styles for DESKTOP devices will go within this breakpoint */
 @media (max-width: 1200px) {
   .recipe .flexContainer {
     display: -webkit-box;
@@ -813,6 +813,7 @@ footer p {
     letter-spacing: 2px;
   }
 }
+/* all of our styles for TABLET devices will go within this breakpoint */
 @media (max-width: 768px) {
   header {
     height: 70vh;
@@ -872,12 +873,14 @@ footer p {
     font-size: 1rem;
   }
 }
+/* all of our styles for large MOBILE devices will go within this breakpoint */
 @media (max-width: 520px) {
   .recipe .flexContainer .imgContainer {
     height: 300px;
     width: 300px;
   }
 }
+/* all of our styles for small MOBILE devices will go within this breakpoint */
 @media (max-width: 360px) {
   h2 {
     padding: 16px 60px;

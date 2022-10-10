@@ -1,10 +1,14 @@
 @use "variables" as *;
 
+// Footer Styles:
 footer{
     margin-top: 200px;
     background-color: $primaryColour;
     p{
         text-align: center;
         padding: 0.3rem;
+        a {
+            color: $secondaryColour;
+        }
     }
 }

@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
+    <!-- Header HTML -->
     <header>
         <div class="hero"></div>
         <div class="wrapper">
             <nav>
                 <button class="navIcon fa-solid fa-bars">
                     <p class="sr-only">click here to open slide-out menu</p>
-                </button>
-                <!--.navIcon ends-->
+                </button> <!-- .navIcon ends -->
                 <ul class="navBar">
                     <li class="logo">Tasty Table</li>
                     <ul>
@@ -24,14 +24,15 @@
                         <li><a href="./about.html" title="About Tasty Table" class="navButton">About</a></li>
                         <li><a href="#main" title="Go to Our Recipes" class="navButton">Recipes</a></li>
                     </ul>
-                </ul>
+                </ul> <!-- .navBar ends -->
             </nav>
             <div class="flexContainer">
                 <h1><span>Welcome</span>to Your Kitchen</h1>
                 <h2>Helping you craft the perfect meal</h2>
                 <a href="#main" title="Go to main section" class="button">Start Cooking</a>
-            </div>
-        </div>
+            </div> <!-- .flexContainer ends -->
+        </div> <!-- .wrapper ends -->
+
         <!-- Markup for Slide Out Nav -->
         <div class="slideOutNav hide" id="slideOutNavElement">
             <div class="buttonContainer">
@@ -44,43 +45,31 @@
                     <li><a href="#main" title="Go to Our Recipes" class="navButton">Recipes</a></li>
                 </ul>
             </nav>
-        </div> <!-- .slideOutNav ends -->
+        </div> <!-- .slideOutNav .hide ends -->
     </header>
+    <!-- Header HTML ends -->
+    
+    <!-- Main HTML -->
     <main>
         <section class="wrapper main" id="main">
+            <!-- Search Bar for Recipe Search -->
             <form action="#" method="#" class="searchBar" name="searchBar">
                 <label for="search" class="sr-only">Search ingredient or dish</label>
                 <input type="text" list="searchList" id="search" placeholder="Search for any ingredient">
-                <datalist id="searchList">
-                </datalist>
+                <datalist id="searchList"></datalist>
                 <button type="submit">Find me the perfect meal!</button>
-            </form><!--Form ends-->
-            <!-- <div class="recipe">
-                <h3>Recipe Title</h3>
-                <div class="flexContainer">
-                    <div class="imgContainer">
-                        <img src="http://placekitten.com/400/400" alt="The image of the recipe">
-                    </div>
-                    <div class="textContainer">
-                        <div class="iconFlexContainer">
-                            <div class="icon">
-                                <i class="fa-regular fa-clock"></i>
-                                <p>Prep Time: 3min</p>
-                            </div>
-                            <div class="icon">
-                                <i class="fa-solid fa-fire-burner"></i>
-                                <p>Cooking Time: 20min</p>
-                            </div>
-                        </div>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas sapiente nam magnam iusto quibusdam reprehenderit consequuntur, commodi nulla ex dolor blanditiis omnis excepturi dolorem ipsa quasi repellat laborum aperiam aut?</p>
-                    </div>
-                </div>
-            </div> -->
-        </section>
+            </form> <!-- .searchBar ends -->
+        </section> <!-- .wrapper .main ends -->
     </main>
+    <!-- Main HTML ends -->
+    
+    <!-- Footer HTML -->
     <footer>
-        <p>Copyright © 2022 Juno College</p>
+        <p>Copyright © 2022 <a href="https://junocollege.com/">Juno College</a></p>
     </footer>
+    <!-- Footer HTML ends -->
+    
+    <!-- Linked JS file -->
     <script src="./script.js"></script>
 </body>
 </html>

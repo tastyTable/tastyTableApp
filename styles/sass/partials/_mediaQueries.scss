@@ -3,6 +3,7 @@
 
 // Media Queries:
 
+/* all of our styles for DESKTOP devices will go within this breakpoint */
 @media (max-width: 1200px) {
     .recipe {
         .flexContainer {
@@ -25,6 +26,7 @@
     }
 }
 
+/* all of our styles for TABLET devices will go within this breakpoint */
 @media (max-width: 768px){
     header {
         height: 70vh;
@@ -64,6 +66,7 @@
     }
 }
 
+/* all of our styles for large MOBILE devices will go within this breakpoint */
 @media (max-width: 520px) {
     .recipe {
         .flexContainer {
@@ -75,6 +78,7 @@
     }
 }
 
+/* all of our styles for small MOBILE devices will go within this breakpoint */
 @media (max-width: 360px) {
     h2 {
         padding: 16px 60px;

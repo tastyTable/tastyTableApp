@@ -1,6 +1,7 @@
 @use "variables" as *;
 @use "mixins" as *;
 
+// Header Styles:
 header {
     height: 100vh;
     .hero {
@@ -38,6 +39,8 @@ header {
     .flexContainer {
         @include flex (column, nowrap, center, center)
     }
+
+    // Slide Out Nav Styles:
     .slideOutNav {
         ul {
             @include flex (column, nowrap, center, center)
@@ -85,6 +88,7 @@ header {
             }
         }
     }
+    // Show and Hide class to toggle using Javascript (for slide-out Nav)
     .show {
         display: block;
     }

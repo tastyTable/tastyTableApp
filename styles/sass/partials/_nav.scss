@@ -1,25 +1,22 @@
 @use "variables" as *;
 @use "mixins" as *;
 
-/* Nav styles */
+// Nav Styles:
 nav {
-position: fixed;
-width: 90%;
-}
-
-nav ul {
-    @include flex (row, nowrap, space-between, center);
-    padding: 20px 0;
-}
-
-nav ul ul {
-    @include flex (row, nowrap, flex-end, center);
-    width: 50%;
-}
-
-nav ul ul li {
-    font-family: "Josefin Sans";
-    margin-left: 50px
+    position: fixed;
+    width: 90%;
+    ul {
+        @include flex (row, nowrap, space-between, center);
+        padding: 20px 0;
+        ul {
+            @include flex (row, nowrap, flex-end, center);
+            width: 50%;
+            li {
+                font-family: "Josefin Sans";
+                margin-left: 50px
+            }  
+        }
+    }
 }
 
 .navButton {
@@ -32,8 +29,7 @@ nav ul ul li {
     cursor: pointer;
     transition: 0.3s;
 
-    &:hover,
-    &:focus {
+    &:hover, &:focus {
         color: $secondaryColour;
         background-color: $primaryColour;
     }
