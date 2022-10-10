@@ -215,15 +215,15 @@ app.displayRecipe = function(recipe){
         <div class="textContainer">
             <div class="iconFlexContainer">
                 <div class="icon">
-                    <i class="fa-regular fa-clock"></i>
+                    <i class="fa-regular fa-clock" aria-hidden = "true"></i>
                     <p>Prep Time: ${prepTime} mins</p>
                 </div>
                 <div class="icon">
-                    <i class="fa-solid fa-fire-burner"></i>
+                    <i class="fa-solid fa-fire-burner" aria-hidden = "true"></i>
                     <p>Cooking Time: ${cookTime} mins</p>
                 </div>
             </div>
-            <p>${description} <a href="https://tasty.co/recipe/${recipeSlug}">See full recipe here</a></p>
+            <p>${description} <a href="https://tasty.co/recipe/${recipeSlug}" class="recipeLink">See full recipe here</a></p>
         </div>
     </div>
     `

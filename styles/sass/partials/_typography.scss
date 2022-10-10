@@ -92,6 +92,12 @@ p{
     letter-spacing: 1px;
 }
 
+.about li {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    line-height: clamp(1.1rem, 3vw, 1.6rem);
+    letter-spacing: 1px;
+}
+
 .navButton {
     font-family: $accentFont;
     font-size: 0.9rem;
@@ -105,4 +111,10 @@ textarea, input, button, .button{
     font-weight: 600;
     font-size: 1.2rem;
     text-align: center;
+}
+
+.recipeLink {
+    font-family: $accentFont;
+    color: $secondaryColour;
+    font-weight: 600;
 }
