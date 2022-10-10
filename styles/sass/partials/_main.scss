@@ -42,7 +42,7 @@
     margin-bottom: -150px;
     .flexContainer{
         padding: 1rem;
-        @include flex (row, nowrap);
+        @include flex (row, wrap);
         gap: 3rem;
         .imgContainer{
             flex-shrink: 0;
@@ -59,7 +59,7 @@
         .textContainer{
             .iconFlexContainer{
                 margin: 1rem 0;
-                @include flex (row, nowrap, flex-start);
+                @include flex (row, wrap, flex-start);
                 gap: 5rem;
             }
         }
@@ -67,7 +67,7 @@
 }
 
 .icon{
-    @include flex (row, nowrap, space-between, center);
+    @include flex (row, wrap, space-between, center);
     gap: 1rem;
     i{
         font-size: 2rem;

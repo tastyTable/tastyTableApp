@@ -327,8 +327,8 @@ html {
 }
 
 h1 {
-  font-size: clamp(2rem, 9vw, 5rem);
-  line-height: clamp(2.2rem, 9vw, 5rem);
+  font-size: clamp(2.5rem, 9vw, 5rem);
+  line-height: clamp(2.6rem, 9vw, 5rem);
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
@@ -339,8 +339,8 @@ h1 span {
 
 h2 {
   font-family: "josefinSans";
-  font-size: clamp(1.4rem, 4vw, 2rem);
-  line-height: clamp(1.6rem, 4vw, 2.6rem);
+  font-size: clamp(1.8rem, 4vw, 2rem);
+  line-height: clamp(2rem, 4vw, 2.6rem);
   text-align: center;
   letter-spacing: 6px;
 }
@@ -567,8 +567,8 @@ header .flexContainer {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: normal;
       -ms-flex-pack: normal;
           justify-content: normal;
@@ -601,8 +601,8 @@ header .flexContainer {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -620,8 +620,8 @@ header .flexContainer {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -690,9 +690,76 @@ footer p {
     letter-spacing: 2px;
   }
 }
+@media (max-width: 768px) {
+  header {
+    height: 70vh;
+  }
+  header h1 {
+    margin-top: 7rem;
+  }
+  .recipe .flexContainer .textContainer {
+    padding: 0;
+  }
+  .recipe .flexContainer .textContainer .iconFlexContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: normal;
+        -ms-flex-align: normal;
+            align-items: normal;
+    gap: 0.5rem;
+  }
+  .icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: normal;
+        -ms-flex-pack: normal;
+            justify-content: normal;
+    -webkit-box-align: normal;
+        -ms-flex-align: normal;
+            align-items: normal;
+    gap: 0.5rem;
+  }
+  .icon i {
+    font-size: 1rem;
+  }
+}
 @media (max-width: 520px) {
   .recipe .flexContainer .imgContainer {
     height: 300px;
     width: 300px;
+  }
+}
+@media (max-width: 360px) {
+  h2 {
+    padding: 16px 60px;
+  }
+  .recipe .flexContainer {
+    padding: 1rem 0;
+  }
+  .recipe .flexContainer .imgContainer {
+    height: 275px;
+    width: 275px;
+  }
+}
+@media (max-width: 350px) {
+  html {
+    font-size: 100%;
   }
 }

@@ -11,11 +11,8 @@
             .textContainer {
                 padding: 0 10%;
                 .iconFlexContainer {
-                    @include flex (row, nowrap, space-around, center)
+                    @include flex (row, nowrap, space-around, center);
                 }
-                // p {
-                //     text-align: center;
-                // }
             }
         }
     }
@@ -28,6 +25,33 @@
     }
 }
 
+@media (max-width: 768px){
+    header {
+        height: 70vh;
+        h1 {
+            margin-top: 7rem;
+        }
+    }
+    .recipe {
+        .flexContainer {
+            .textContainer {
+                padding: 0;
+                .iconFlexContainer {
+                    @include flex (column, wrap, flex-start);
+                    gap: 0.5rem;
+                }
+            }
+        }
+    }
+    .icon{
+        @include flex (row, wrap);
+        gap: 0.5rem;
+        i{
+            font-size: 1rem;
+        }
+    }
+}
+
 @media (max-width: 520px) {
     .recipe {
         .flexContainer {
@@ -35,11 +59,27 @@
                 height: 300px;
                 width: 300px;
             }
-            // .textContainer {
-            //     p {
-            //         font-size: 0.5rem;
-            //     }
-            // }
         }
+    }
+}
+
+@media (max-width: 360px) {
+    h2 {
+        padding: 16px 60px;
+    }
+    .recipe {
+        .flexContainer {
+            padding: 1rem 0;
+            .imgContainer {
+                height: 275px;
+                width: 275px;
+            }
+        }
+    }
+}
+
+@media (max-width: 350px) {
+    html{
+        font-size: 100%;
     }
 }
