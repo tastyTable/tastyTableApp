@@ -11,6 +11,9 @@ app.apiKey = '180120784fmsh53e5419d8e55e13p1e8b89jsn0210d2e0e838';
 app.inputElement = document.querySelector('#search');
 app.dataList = document.querySelector('#searchList');
 app.form = document.querySelector('form');
+app.menuIcon = document.querySelector('.navIcon');
+app.closeIcon = document.querySelector('.buttonContainer');
+app.slideOut = document.getElementById('slideOutNavElement');
 
 app.getAutoComplete = function(ingredient){
     const url = new URL('https://tasty.p.rapidapi.com/recipes/auto-complete')
@@ -215,15 +218,15 @@ app.displayRecipe = function(recipe){
         <div class="textContainer">
             <div class="iconFlexContainer">
                 <div class="icon">
-                    <i class="fa-regular fa-clock"></i>
+                    <i class="fa-regular fa-clock" aria-hidden = "true"></i>
                     <p>Prep Time: ${prepTime} mins</p>
                 </div>
                 <div class="icon">
-                    <i class="fa-solid fa-fire-burner"></i>
+                    <i class="fa-solid fa-fire-burner" aria-hidden = "true"></i>
                     <p>Cooking Time: ${cookTime} mins</p>
                 </div>
             </div>
-            <p>${description} <a href="https://tasty.co/recipe/${recipeSlug}">See full recipe here</a></p>
+            <p>${description} <a href="https://tasty.co/recipe/${recipeSlug}" class="recipeLink">See full recipe here</a></p>
         </div>
     </div>
     `
@@ -237,10 +240,26 @@ app.displayRecipe = function(recipe){
     }
 }
 
+// function that will show slide out menu
+app.showClass = () => {
+    app.menuIcon.addEventListener('click', () => {
+        app.slideOut.classList.remove('hide');
+        app.slideOut.classList.add('show');
+    });
+}
 
+// function that will hide slide out menu
+app.hideClass = () => {
+    app.closeIcon.addEventListener('click', () => {
+        app.slideOut.classList.remove('show');
+        app.slideOut.classList.add('hide');
+    });
+}
 
 app.init = function () {
-    app.events()
+    app.events();
+    app.showClass();
+    app.hideClass();
 };
 
 app.init();

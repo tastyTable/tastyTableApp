@@ -356,6 +356,12 @@ p {
   letter-spacing: 1px;
 }
 
+.about li {
+  font-size: clamp(0.8rem, 3vw, 1rem);
+  line-height: clamp(1.1rem, 3vw, 1.6rem);
+  letter-spacing: 1px;
+}
+
 .navButton {
   font-family: "josefinSans";
   font-size: 0.9rem;
@@ -369,6 +375,12 @@ textarea, input, button, .button {
   font-weight: 600;
   font-size: 1.2rem;
   text-align: center;
+}
+
+.recipeLink {
+  font-family: "josefinSans";
+  color: #FF724C;
+  font-weight: 600;
 }
 
 * {
@@ -505,6 +517,21 @@ header .hero::before {
   left: 0;
   opacity: 0.25;
 }
+header .navIcon {
+  display: none;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  width: auto;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #F4F4F8;
+  background-color: #FF724C;
+}
+header .navIcon:hover, header .navIcon:focus {
+  color: #FF724C;
+  background-color: #F4F4F8;
+}
 header .flexContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -521,6 +548,102 @@ header .flexContainer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+header .slideOutNav {
+  padding: 35px 50px;
+  width: 100%;
+  height: 100vh;
+  background-color: #2A2C41;
+  opacity: 0.95;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  -webkit-transition: 0.75s;
+  transition: 0.75s;
+}
+header .slideOutNav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+header .slideOutNav .buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
+}
+header .slideOutNav .buttonContainer button {
+  border-radius: 50%;
+  padding: 9px 17px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 6px;
+  background-color: #FF724C;
+  font-size: 2rem;
+  color: #F4F4F8;
+  z-index: 20;
+}
+header .slideOutNav .buttonContainer button:hover, header .slideOutNav .buttonContainer button:focus {
+  color: #FF724C;
+  background-color: #F4F4F8;
+}
+header .slideOutNav li {
+  padding-bottom: 30px;
+}
+header .slideOutNav li a {
+  font-family: "josefinSans";
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  color: #F4F4F8;
+}
+header .slideOutNav li a:hover, header .slideOutNav li a:focus {
+  color: #FF724C;
+  background-color: #F4F4F8;
+}
+header .show {
+  display: block;
+}
+header .hide {
+  display: none;
+}
+
+.aboutSection {
+  margin-top: -100vh;
+  padding-top: 100px;
+  margin-bottom: 300px;
+}
+
+.about {
+  background-color: #F4F4F8;
+  border-radius: 2rem;
+  border: 4px solid #FF724C;
+  padding: 20px 30px 20px;
 }
 
 .main {
@@ -567,8 +690,8 @@ header .flexContainer {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -webkit-box-pack: normal;
       -ms-flex-pack: normal;
           justify-content: normal;
@@ -696,6 +819,15 @@ footer p {
   }
   header h1 {
     margin-top: 7rem;
+  }
+  header nav .navIcon {
+    display: block;
+  }
+  header nav .navBar {
+    display: none;
+  }
+  .aboutSection {
+    margin-top: -70vh;
   }
   .recipe .flexContainer .textContainer {
     padding: 0;

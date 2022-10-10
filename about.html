@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f21b5dfadd.js" crossorigin="anonymous"></script>
+    <title>Tasty Table | About</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+    <header>
+        <div class="hero"></div>
+        <div class="wrapper">
+            <nav>
+                <button class="navIcon fa-solid fa-bars">
+                    <p class="sr-only">click here to open slide-out menu</p>
+                </button>
+                <!--.navIcon ends-->
+                <ul class="navBar">
+                    <li class="logo">Tasty Table</li>
+                    <ul>
+                        <li><a href="./index.html" class="navButton">Home</a></li>
+                        <li><a href="./about.html" title="About Tasty Table" class="navButton">About</a></li>
+                        <li><a href="index.html#main" title="Go to Our Recipes" class="navButton">Recipes</a></li>
+                    </ul>
+                </ul>
+            </nav>
+        </div>
+        <!-- Markup for Slide Out Nav -->
+        <div class="slideOutNav hide" id="slideOutNavElement">
+            <div class="buttonContainer">
+                <button><i class="fa-solid fa-xmark"></i></button>
+            </div> <!-- .buttonContainer ends -->
+            <nav>
+                <ul>
+                    <li><a href="./index.html" class="navButton">Home</a></li>
+                    <li><a href="./about.html" title="About Tasty Table" class="navButton">About</a></li>
+                    <li><a href="index.html#main" title="Go to Our Recipes" class="navButton">Recipes</a></li>
+                </ul>
+            </nav>
+        </div> <!-- .slideOutNav ends -->
+    </header>
+    <main>
+        <section class="wrapper aboutSection" id="about">
+            <h2>About</h2>
+            <div class="about">
+                <p>Have you ever had ingredients in your kitchen, but didn't know what to cook? Then, Tasty Table is perfect for
+                    you!</p>
+                <p>-------------</p>
+                <ul>
+                    <li>Step 1: Search for an ingredient or dish</li>
+                    <li>Step 2: Our website will generate one random recipe that uses your ingredient or dish</li>
+                    <li>Step 3: Click on the description link to access the recipe</li>
+                    <li>Step 4: Start Cooking!</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright © 2022 Juno College</p>
+    </footer>
+    <script src="./scriptAbout.js"></script>
+</body>
+</html>

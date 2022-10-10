@@ -18,6 +18,19 @@
 //     // }
 // }
 
+.aboutSection {
+    margin-top: -100vh;
+    padding-top: 100px;
+    margin-bottom: 300px;
+}
+
+.about {
+    background-color: $primaryColour;
+    border-radius: 2rem;
+    border: 4px solid $secondaryColour;
+    padding: 20px 30px 20px;
+}
+
 .main{
     position: relative;
     padding-top: 4rem;
@@ -42,7 +55,7 @@
     margin-bottom: -150px;
     .flexContainer{
         padding: 1rem;
-        @include flex (row, wrap);
+        @include flex (row, nowrap);
         gap: 3rem;
         .imgContainer{
             flex-shrink: 0;
