@@ -5,11 +5,6 @@ app.menuIcon = document.querySelector('.navIcon');
 app.closeIcon = document.querySelector('.buttonContainer');
 app.slideOut = document.getElementById('slideOutNavElement');
 
-// init method that will run when our app first loads
-app.init = () => {
-    app.showClass();
-    app.hideClass();
-}
 
 // function that will show slide out menu
 app.showClass = () => {
@@ -27,4 +22,11 @@ app.hideClass = () => {
     });
 }
 
+// init method that will run when app first loads
+app.init = () => {
+    app.showClass();
+    app.hideClass();
+}
+
+// calling init method
 app.init()

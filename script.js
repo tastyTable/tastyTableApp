@@ -9,7 +9,7 @@
 const app = {};
 
 // namespace variables
-app.apiKey = '180120784fmsh53e5419d8e55e13p1e8b89jsn0210d2e0e838';
+app.apiKey = '6aab796937msh786ae70d84925b3p16c2dbjsn00d2aa969bd7';
 app.inputElement = document.querySelector('#search');
 app.dataList = document.querySelector('#searchList');
 app.form = document.querySelector('form');
@@ -66,18 +66,17 @@ app.getAutoComplete = function(ingredient){
 
 // method to display search value to the search bar's dropdown
 app.displayDropDown = function(arrayofResults){
+    // **NOTE: this logic was supposed to delete everything in the datalist, before appending new search values, so we wouldn't get duplicates in the dropdown, however, we need to improve the code because not working exactly as intended** 
+    if (app.dataList.childElementCount > 0) {
+        while (app.dataList.firstChild) {
+            app.dataList.removeChild(app.dataList.firstChild);
+        }
+    }
     arrayofResults.forEach((result)=>{
         const searchValue = result.search_value;
         const option = document.createElement('option')
         option.setAttribute("value", searchValue)
-        if (app.dataList.childElementCount = 0){
-            app.dataList.append(option)
-        } else{
-            while(app.dataList.firstChild){
-                app.dataList.removeChild(app.dataList.firstChild);
-            }
-            app.dataList.append(option)
-        }
+        app.dataList.append(option)
     });
 }
 
@@ -204,12 +203,12 @@ app.hideClass = () => {
     });
 }
 
-// initiation method
+// init method that will run when app first loads
 app.init = function () {
     app.events();
     app.showClass();
     app.hideClass();
 };
 
-// calling the initiation method
+// calling init method
 app.init();
